@@ -21,7 +21,7 @@
 		"issues": "https://github.com/tomzx/php-code-coverage-verifier/issues"
 	},
 	"require": {
-		"php": ">=5.5",
+		"php": ">=5.4",
 		"symfony/console": "~2.7"
 	},
 	"require-dev": {
