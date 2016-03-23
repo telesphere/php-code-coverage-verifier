@@ -73,12 +73,12 @@ class CodeCoverageVerifier
 		foreach ($extracted_data as $filename => $line) {
 			$file_node = $clover_xml->find_file($filename);
 			
-			if (!array_key_exists('line', $line))
+			if (empty($line))
 			{
-				//probably a submodule
+				//No lines were actually changed. Can be ignored
 				continue;
 			}
-
+			
 			foreach ($line['line'] as $id => $range) {
 				$ignored = false;
 
