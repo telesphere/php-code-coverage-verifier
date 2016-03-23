@@ -100,6 +100,12 @@ class UnifiedDiffParser
 		
 		array_shift($matches);
 
+		//git has a prefix of a/ in this line
+		if ($this->startsWith($matches[0], 'a/'))
+		{
+			$matches[0] = substr($matches[0], strlen('a/'));
+		}
+
 		$this->extracted_data[$matches[0]] = array();
 		$this->current_file = &$this->extracted_data[$matches[0]];
 
@@ -112,6 +118,12 @@ class UnifiedDiffParser
 
 		if (count($matches) === 0) return;
 		array_shift($matches);
+
+		//git has a prefix of b/ in this line
+		if ($this->startsWith($matches[0], 'b/'))
+		{
+			$matches[0] = substr($matches[0], strlen('b/'));
+		}
 
 		if ($this->new_file)
 		{

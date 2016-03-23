@@ -2,7 +2,7 @@ diff --git scripts/console scripts/console
 new file mode 100644
 index 0000000..19b446b
 --- /dev/null
-+++ application/classes/controller/a_nice_file.php	(working copy)
++++ b/application/classes/controller/a_nice_file.php	(working copy)
 @@ -60,6 +58,7 @@
 +			$x = 3;
  		}
