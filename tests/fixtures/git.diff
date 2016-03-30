@@ -1,3 +1,8 @@
+diff --git htdocs/files/test.mp4 htdocs/files/test.mp4
+new file mode 100644
+index 0000000..0577cc2
+Binary files /dev/null and htdocs/files/test.mp4 differ
+
 diff --git scripts/console scripts/console
 new file mode 100644
 index 0000000..19b446b
