@@ -20,6 +20,7 @@ class UnifiedDiffParser
 		'+' => 'parse_added',
 		'-' => 'parse_removed',
 		'\\' => 'parse_comment',
+		'Binary' => 'parse_binary',
 	);
 
 	private $contextual_line_count = 0;
@@ -179,6 +180,11 @@ class UnifiedDiffParser
 	private function parse_comment($line)
 	{
 		$this->log('comment '.$line);
+	}
+
+	private function parse_binary($line)
+	{
+		$this->log('binary '.$line);
 	}
 
 	public function get_extracted_data()
