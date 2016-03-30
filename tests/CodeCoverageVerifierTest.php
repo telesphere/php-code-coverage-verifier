@@ -98,7 +98,6 @@ class CodeCoverageVerifierTest extends PHPUnit_Framework_TestCase
 		$codeCoverageVerifier = new CodeCoverageVerifier();
 		$coverage = $codeCoverageVerifier->execute_file($this->fixture('namespaced_clover_xml.xml'), $this->fixture('git.diff'));
 
-		dump($coverage);
 		$expected = $codeCoverageVerifier->get_default_coverage_result();
 		$expected['covered'][] = 'application/classes/controller/a_nice_file.php line 78 - 84';
 		$expected['covered'][] = 'application/classes/controller/a_nice_file.php line 114 - 120';
