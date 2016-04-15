@@ -32,3 +32,8 @@ index 0000000..19b446b
  	/**
  	 * Something else
  	 *
+
+diff --git somefile.xml somefile.xml
+old mode 100644
+new mode 100755
+index 7d522eb..b36bfac
