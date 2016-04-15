@@ -11,6 +11,7 @@ class UnifiedDiffParser
 		'index' => 'parse_index',
 		'diff' => 'parse_diff',
 		'deleted' => 'parse_deleted',
+		'old' => 'parse_old',
 		'new' => 'parse_new',
 		'===' => 'parse_separator',
 		'---' => 'parse_source',
@@ -75,6 +76,11 @@ class UnifiedDiffParser
 	private function parse_new($line)
 	{
 		$this->log('new', $line);
+	}
+
+	private function parse_old($line)
+	{
+		$this->log('old', $line);
 	}
 
 	private function parse_diff($line)
