@@ -26,3 +26,8 @@ Index: application/classes/controller/a_nice_file.php
  	/**
  	 * Something else
  	 *
+
+diff --git a/htdocs/js/Zeus/qa/DEV.png b/htdocs/js/Zeus/qa/dev.png
+similarity index 100%
+rename from htdocs/js/Zeus/qa/DEV.png
+rename to htdocs/js/Zeus/qa/dev.png
