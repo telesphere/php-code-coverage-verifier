@@ -95,6 +95,11 @@ class UnifiedDiffParser
 		$this->log('new', $line);
 	}
 
+	private function parse_old($line)
+	{
+		$this->log('old', $line);
+	}
+
 	private function parse_diff($line)
 	{
 		$this->log('diff', $line);
