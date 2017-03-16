@@ -13,6 +13,8 @@ class UnifiedDiffParser
 		'deleted' => 'parse_deleted',
 		'old' => 'parse_old',
 		'new' => 'parse_new',
+		'rename' => 'parse_rename',
+		'similarity' => 'parse_similarity',
 		'===' => 'parse_separator',
 		'---' => 'parse_source',
 		'+++' => 'parse_destination',
@@ -91,6 +93,16 @@ class UnifiedDiffParser
 	private function parse_separator($line)
 	{
 		$this->log('separator '.$line);
+	}
+
+	private function parse_rename($line)
+	{
+		$this->log('rename '.$line);
+	}
+
+	private function parse_similarity($line)
+	{
+		$this->log('similarity '.$line);
 	}
 
 	private function parse_source($line)

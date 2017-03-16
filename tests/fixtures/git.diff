@@ -1,4 +1,7 @@
 diff --git htdocs/files/test.mp4 htdocs/files/test.mp4
+similarity index 86%
+rename from htdocs/files/test.mp4 htdocs/files/test.mp4
+rename to htdocs/files/test.mp4 htdocs/files/test.mp4
 new file mode 100644
 index 0000000..0577cc2
 Binary files /dev/null and htdocs/files/test.mp4 differ
