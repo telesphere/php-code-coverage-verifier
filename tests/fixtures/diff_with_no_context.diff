@@ -1,0 +1,7 @@
+Index: application/classes/controller/a_nice_file.php
+===================================================================
+--- application/classes/controller/a_nice_file.php	(revision 910)
++++ application/classes/controller/a_nice_file.php	(working copy)
+@@ -78 +78 @@
++			$x = 3;
+-

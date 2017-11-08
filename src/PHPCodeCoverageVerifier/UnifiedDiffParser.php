@@ -155,26 +155,32 @@ class UnifiedDiffParser
 
 	private function parse_range($line)
 	{
-		preg_match('/@@ \-(\d+),(\d+) \+(\d+),(\d+) @@/', $line, $matches);
+		preg_match('/@@ \-(.*) \+(.*) @@/', $line, $matches);
 
 		if (count($matches) === 0) return;
 
 		array_shift($matches);
 
+		$source = explode(',', $matches[0]);
+		isset($source[1]) ?: $source[1] = 0;
+
+		$destination = explode(',', $matches[1]);
+		isset($destination[1]) ?: $destination[1] = 0;
+
 		$this->current_file['line'][] = array(
 			'range' => array(
 				'source'		=> array(
-					'line_start' => $matches[0],
-					'line_count' => $matches[1]
+					'line_start' => $source[0],
+					'line_count' => $source[1]
 				),
 				'destination' 	=> array(
-					'line_start' => $matches[2],
-					'line_count' => $matches[3]
+					'line_start' => $destination[0],
+					'line_count' => $destination[1]
 				),
 			),
 		);
 
-		$this->log('range('.$matches[0].', '.$matches[1].', '.$matches[2].', '.$matches[3].') '.$line);
+		$this->log('range('.$source[0].', '.$source[1].', '.$destination[0].', '.$destination[1].') '.$line);
 	}
 
 	private function parse_unchanged($line)

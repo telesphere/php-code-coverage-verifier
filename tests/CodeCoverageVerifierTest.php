@@ -65,6 +65,17 @@ class CodeCoverageVerifierTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals($expected, $coverage);
 	}
 
+	public function testExecuteCloverXmlFileWithDiffFileWithNoContext()
+	{
+		$codeCoverageVerifier = new CodeCoverageVerifier();
+		$coverage = $codeCoverageVerifier->execute_file($this->fixture('clover_xml.xml'), $this->fixture('diff_with_no_context.diff'));
+
+		$expected = $codeCoverageVerifier->get_default_coverage_result();
+		$expected['covered'][] = 'application/classes/controller/a_nice_file.php line 78 - 78';
+		$expected['details']['covered'] = 1;
+		$this->assertEquals($expected, $coverage);
+	}
+
 	public function testExecuteCloverXmlFileWithDiffFileWithOptionDisplayNotCoveredRange()
 	{
 		$codeCoverageVerifier = new CodeCoverageVerifier(array('display_not_covered_range' => true));
@@ -113,6 +124,7 @@ class CodeCoverageVerifierTest extends PHPUnit_Framework_TestCase
 		$coverage = $codeCoverageVerifier->execute_file($this->fixture('clover_xml.xml'), $this->fixture('submodule.diff'));
 
 		$expected = $codeCoverageVerifier->get_default_coverage_result();
+		$expected['ignored'][] = 'some_submodule';
 		$this->assertEquals($expected, $coverage);
 	}
 }
