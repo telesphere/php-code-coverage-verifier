@@ -183,17 +183,6 @@ class UnifiedDiffParser
 		$this->log('range('.$source[0].', '.$source[1].', '.$destination[0].', '.$destination[1].') '.$line);
 	}
 
-	private function parse_context_free_range($line)
-	{
-		preg_match('/@@ \-(.*) \+(.*) @@/', $line, $matches);
-		
-		if (count($matches) === 0) return;
-		
-		array_shift($matches);
-		
-
-	}
-
 	private function parse_unchanged($line)
 	{
 		++$this->contextual_line_count;
